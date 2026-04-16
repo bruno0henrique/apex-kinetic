@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Apex Kinetic - Training Insights</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style data-purpose="custom-layout">
+        body {
+            background-color: #020617; /* slate-950 */
+            font-family: 'Manrope', sans-serif;
+            color: #f1f5f9;
+        }
+        .font-space { font-family: 'Space_Grotesk', sans-serif; }
+        .custom-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+        }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(164, 255, 0, 0.3);
+        }
+        .neon-border {
+            border: 1px solid rgba(164, 255, 0, 0.4);
+        }
+        .ease-out-expo {
+            transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+        }
+    </style>
+</head>
+<body class="antialiased pb-32">
+<!-- BEGIN: TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-950/40 backdrop-blur-[24px] shadow-[0_4px_30px_rgba(0,0,0,0.1)] bg-gradient-to-b from-slate-900/20 to-transparent">
+<div class="flex justify-between items-center px-6 h-20 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#A4FF00] hover:scale-105 transition-transform cursor-pointer">bolt</span>
+<h1 class="text-2xl font-black text-[#A4FF00] italic font-['Space_Grotesk'] uppercase tracking-tighter">APEX KINETIC</h1>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-[#A4FF00]/30 overflow-hidden hover:scale-105 transition-transform cursor-pointer">
+<img alt="User profile photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASB5sUZYws4mPHINT5YaJJ-QpeIjftz1s9fZep8F3Kfe3LcFMzT7b-QSd_FX7SUkaZ80mrEUiKIWNQmFYz78hpOxxfwMalPusuWtxoRsVDqkd5hkkXc7Z_53AorHcl7GfTPSyB9AUD6b6h8YhFi4c4ILknWhvdRuVediwnD49QJkDziDnUgbgTP3sinpoBpSc1gWpOGXV-58ZXYCEGpRFdqiRBFF0rox_-4b1SFBOyomf7AMsVJKgbjvaYPD-Uuia-3NULBcdPPmE"/>
+</div>
+</div>
+</header>
+<!-- END: TopAppBar -->
+<!-- BEGIN: MainContent -->
+<main class="max-w-md mx-auto px-6 mt-28 space-y-10">
+<!-- BEGIN: WorkoutFrequency -->
+<section data-purpose="calendar-section" id="workout-frequency">
+<div class="flex items-center justify-between mb-5 px-1">
+<h2 class="text-xl font-bold text-white font-space tracking-tight">FREQUENCY</h2>
+<span class="text-[10px] font-bold text-[#A4FF00] uppercase tracking-widest bg-[#A4FF00]/10 px-3 py-1 rounded-full">October</span>
+</div>
+<div class="glass-panel p-6 rounded-[2.5rem] shadow-2xl">
+<div class="flex justify-between text-[10px] font-extrabold text-slate-500 mb-4 px-1 uppercase tracking-widest">
+<span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span>
+</div>
+<div class="calendar-grid">
+<div class="aspect-square rounded-xl flex items-center justify-center text-xs text-slate-800">28</div>
+<div class="aspect-square rounded-xl flex items-center justify-center text-xs text-slate-800">29</div>
+<div class="aspect-square rounded-xl flex items-center justify-center text-xs text-slate-800">30</div>
+<div class="aspect-square rounded-xl flex items-center justify-center text-xs text-slate-800">31</div>
+<div class="aspect-square bg-[#A4FF00] text-slate-950 rounded-xl flex items-center justify-center text-xs font-black shadow-[0_0_15px_rgba(164,255,0,0.3)]">1</div>
+<div class="aspect-square bg-slate-800/40 rounded-xl flex items-center justify-center text-xs text-slate-500">2</div>
+<div class="aspect-square bg-[#A4FF00] text-slate-950 rounded-xl flex items-center justify-center text-xs font-black shadow-[0_0_15px_rgba(164,255,0,0.3)]">3</div>
+<div class="aspect-square bg-[#A4FF00] text-slate-950 rounded-xl flex items-center justify-center text-xs font-black shadow-[0_0_15px_rgba(164,255,0,0.3)]">4</div>
+<div class="aspect-square bg-slate-800/40 rounded-xl flex items-center justify-center text-xs text-slate-500">5</div>
+<div class="aspect-square bg-[#A4FF00] text-slate-950 rounded-xl flex items-center justify-center text-xs font-black shadow-[0_0_15px_rgba(164,255,0,0.3)]">6</div>
+<div class="aspect-square bg-slate-800/40 rounded-xl flex items-center justify-center text-xs text-slate-500">7</div>
+<div class="aspect-square bg-[#A4FF00] text-slate-950 rounded-xl flex items-center justify-center text-xs font-black shadow-[0_0_15px_rgba(164,255,0,0.3)]">8</div>
+<div class="aspect-square bg-[#A4FF00] text-slate-950 rounded-xl flex items-center justify-center text-xs font-black shadow-[0_0_15px_rgba(164,255,0,0.3)]">9</div>
+<div class="aspect-square bg-slate-800/40 rounded-xl flex items-center justify-center text-xs text-slate-500">10</div>
+<div class="aspect-square bg-[#A4FF00] text-slate-950 rounded-xl flex items-center justify-center text-xs font-black shadow-[0_0_15px_rgba(164,255,0,0.3)]">11</div>
+<div class="aspect-square bg-[#A4FF00] text-slate-950 rounded-xl flex items-center justify-center text-xs font-black ring-2 ring-[#A4FF00] ring-offset-4 ring-offset-slate-900 neon-glow scale-110 z-10">12</div>
+<div class="aspect-square rounded-xl flex items-center justify-center text-xs text-slate-800">13</div>
+<div class="aspect-square rounded-xl flex items-center justify-center text-xs text-slate-800">14</div>
+<div class="aspect-square rounded-xl flex items-center justify-center text-xs text-slate-800">15</div>
+<div class="aspect-square rounded-xl flex items-center justify-center text-xs text-slate-800">16</div>
+<div class="aspect-square rounded-xl flex items-center justify-center text-xs text-slate-800">17</div>
+</div>
+<div class="mt-8 pt-6 border-t border-white/5 flex justify-around text-center">
+<div>
+<p class="text-2xl font-black text-white font-space italic">14</p>
+<p class="text-[9px] uppercase tracking-[0.2em] text-slate-500 font-bold mt-1">Streak</p>
+</div>
+<div>
+<p class="text-2xl font-black text-[#A4FF00] font-space italic">22</p>
+<p class="text-[9px] uppercase tracking-[0.2em] text-slate-500 font-bold mt-1">Sessions</p>
+</div>
+<div>
+<p class="text-2xl font-black text-white font-space italic">85%</p>
+<p class="text-[9px] uppercase tracking-[0.2em] text-slate-500 font-bold mt-1">Score</p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: WorkoutFrequency -->
+<!-- BEGIN: WeightLiftedChart -->
+<section data-purpose="chart-section" id="weight-lifted-chart">
+<div class="flex items-center justify-between mb-5 px-1">
+<h2 class="text-xl font-bold text-white font-space tracking-tight uppercase">Strength</h2>
+<div class="flex gap-1 p-1 bg-slate-900/80 rounded-full border border-white/5">
+<span class="px-3 py-1 text-slate-500 rounded-full text-[9px] font-black tracking-widest uppercase">1W</span>
+<span class="px-3 py-1 bg-[#A4FF00] text-slate-950 rounded-full text-[9px] font-black tracking-widest uppercase shadow-[0_0_10px_rgba(164,255,0,0.4)]">1M</span>
+<span class="px-3 py-1 text-slate-500 rounded-full text-[9px] font-black tracking-widest uppercase">6M</span>
+</div>
+</div>
+<div class="glass-panel p-8 rounded-[3rem] shadow-2xl min-h-[280px] flex flex-col relative overflow-hidden">
+<div class="flex items-baseline gap-2 mb-8 relative z-10">
+<span class="text-5xl font-black text-white tracking-tighter font-space italic">4,280</span>
+<span class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.15em]">Lbs / avg</span>
+<div class="ml-auto flex items-center gap-1 bg-[#A4FF00]/10 border border-[#A4FF00]/20 px-3 py-1.5 rounded-full">
+<span class="material-symbols-outlined text-[14px] text-[#A4FF00] font-bold">trending_up</span>
+<span class="text-[11px] font-black text-[#A4FF00] font-space">12.4%</span>
+</div>
+</div>
+<div class="flex-grow relative z-10">
+<canvas id="weightChart" style="width: 100%; height: 200px;"></canvas>
+</div>
+<!-- Decorative backdrop glow -->
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-[#A4FF00]/5 blur-[60px] rounded-full"></div>
+</div>
+</section>
+<!-- END: WeightLiftedChart -->
+<!-- BEGIN: PersonalRecords -->
+<section data-purpose="pr-section" id="personal-records">
+<div class="flex items-center justify-between mb-5 px-1">
+<h2 class="text-xl font-bold text-white font-space tracking-tight uppercase">Top PRs</h2>
+<button class="text-[#A4FF00] text-[10px] font-black uppercase tracking-[0.2em]">History</button>
+</div>
+<div class="space-y-4">
+<!-- PR Card 1 -->
+<div class="glass-panel p-5 rounded-[2rem] flex items-center shadow-lg transition-all active:scale-[0.97] hover:bg-slate-900/80">
+<div class="w-14 h-14 rounded-2xl bg-[#A4FF00]/10 flex items-center justify-center text-[#A4FF00] mr-5 border border-[#A4FF00]/20 neon-glow">
+<span class="material-symbols-outlined text-2xl font-bold">fitness_center</span>
+</div>
+<div class="flex-grow">
+<p class="text-[9px] font-black text-slate-500 uppercase tracking-[0.2em] mb-1">Deadlift</p>
+<h3 class="text-xl font-black text-white font-space italic">345 <span class="text-xs font-bold text-slate-400 not-italic uppercase ml-1">lbs</span></h3>
+</div>
+<div class="text-right">
+<p class="text-[9px] text-slate-600 font-bold mb-2 uppercase tracking-widest">Oct 12</p>
+<span class="text-[8px] font-black text-slate-950 bg-[#A4FF00] px-3 py-1 rounded-full uppercase tracking-tighter">New Record</span>
+</div>
+</div>
+<!-- PR Card 2 -->
+<div class="glass-panel p-5 rounded-[2rem] flex items-center shadow-lg transition-all active:scale-[0.97] hover:bg-slate-900/80">
+<div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-slate-400 mr-5 border border-white/5">
+<span class="material-symbols-outlined text-2xl">monitoring</span>
+</div>
+<div class="flex-grow">
+<p class="text-[9px] font-black text-slate-500 uppercase tracking-[0.2em] mb-1">Bench Press</p>
+<h3 class="text-xl font-black text-white font-space italic">225 <span class="text-xs font-bold text-slate-400 not-italic uppercase ml-1">lbs</span></h3>
+</div>
+<div class="text-right">
+<p class="text-[9px] text-slate-600 font-bold mb-2 uppercase tracking-widest">Sep 28</p>
+<span class="text-[8px] font-black text-slate-400 border border-white/10 px-3 py-1 rounded-full uppercase tracking-tighter">Elite</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: PersonalRecords -->
+<!-- BEGIN: TrainingVolumeChart -->
+<section class="pb-10" data-purpose="chart-section" id="training-volume-chart">
+<div class="flex items-center justify-between mb-5 px-1">
+<h2 class="text-xl font-bold text-white font-space tracking-tight uppercase">Total Load</h2>
+<button class="text-slate-500 text-[10px] font-black uppercase tracking-[0.2em]">Details</button>
+</div>
+<div class="bg-slate-900/40 p-8 rounded-[3rem] shadow-2xl border border-white/5 min-h-[280px] flex flex-col relative overflow-hidden">
+<div class="flex items-baseline gap-2 mb-8 relative z-10">
+<span class="text-5xl font-black text-[#A4FF00] tracking-tighter font-space italic">28.4k</span>
+<span class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.15em]">Lbs / wk</span>
+<div class="ml-auto flex items-center gap-1 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full">
+<span class="material-symbols-outlined text-[14px] text-white/40">trending_up</span>
+<span class="text-[11px] font-black text-white/60 font-space">3.1%</span>
+</div>
+</div>
+<div class="flex-grow relative z-10">
+<canvas id="volumeChart" style="width: 100%; height: 200px;"></canvas>
+</div>
+</div>
+</section>
+<!-- END: TrainingVolumeChart -->
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-10 pt-4 bg-slate-950/60 backdrop-blur-[24px] border-t border-white/5 rounded-t-[2.5rem] shadow-[0_-10px_40px_rgba(164,255,0,0.08)]">
+<button class="flex flex-col items-center justify-center text-slate-500 hover:text-white transition-colors scale-95 active:scale-90 transition-all ease-out-expo">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-['Manrope'] font-bold text-[10px] uppercase tracking-widest">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-500 hover:text-white transition-colors scale-95 active:scale-90 transition-all ease-out-expo">
+<span class="material-symbols-outlined mb-1">fitness_center</span>
+<span class="font-['Manrope'] font-bold text-[10px] uppercase tracking-widest">Workouts</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-[#A4FF00] text-slate-950 rounded-full py-2 px-5 shadow-[0_0_20px_rgba(164,255,0,0.4)] scale-95 active:scale-90 transition-all ease-out-expo">
+<span class="material-symbols-outlined mb-0.5">monitoring</span>
+<span class="font-['Manrope'] font-bold text-[10px] uppercase tracking-widest">Stats</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-500 hover:text-white transition-colors scale-95 active:scale-90 transition-all ease-out-expo">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-['Manrope'] font-bold text-[10px] uppercase tracking-widest">Profile</span>
+</button>
+</nav>
+<!-- END: BottomNavBar -->
+<!-- BEGIN: ChartScripts -->
+<script data-purpose="chart-initialization">
+    document.addEventListener('DOMContentLoaded', () => {
+        // High-end consistent look
+        const neonColor = '#A4FF00';
+        const slateColor = '#475569';
+        
+        const commonScales = {
+            x: { 
+                display: true, 
+                grid: { display: false }, 
+                ticks: { 
+                    font: { size: 9, weight: '800', family: 'Manrope' }, 
+                    color: slateColor, 
+                    padding: 10,
+                    callback: function(val) { return this.getLabelForValue(val).toUpperCase(); }
+                } 
+            },
+            y: { display: false }
+        };
+
+        // Strength Chart Logic
+        const weightCtx = document.getElementById('weightChart').getContext('2d');
+        new Chart(weightCtx, {
+            type: 'line',
+            data: {
+                labels: ['Sep 15', 'Sep 22', 'Sep 29', 'Oct 6', 'Oct 13'],
+                datasets: [{
+                    label: 'Weight Lifted',
+                    data: [3800, 4100, 3950, 4400, 4280],
+                    borderColor: neonColor,
+                    borderWidth: 5,
+                    tension: 0.5,
+                    fill: true,
+                    backgroundColor: (context) => {
+                        const gradient = context.chart.ctx.createLinearGradient(0, 0, 0, 200);
+                        gradient.addColorStop(0, 'rgba(164, 255, 0, 0.2)');
+                        gradient.addColorStop(1, 'rgba(164, 255, 0, 0)');
+                        return gradient;
+                    },
+                    pointRadius: 0,
+                    pointHoverRadius: 8,
+                    pointHoverBackgroundColor: neonColor,
+                    pointHoverBorderColor: '#fff',
+                    pointHoverBorderWidth: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: commonScales
+            }
+        });
+
+        // Volume Chart Logic
+        const volumeCtx = document.getElementById('volumeChart').getContext('2d');
+        new Chart(volumeCtx, {
+            type: 'line',
+            data: {
+                labels: ['W1', 'W2', 'W3', 'W4', 'W5'],
+                datasets: [{
+                    label: 'Total Volume',
+                    data: [25, 27, 26, 29, 28.4],
+                    borderColor: '#f1f5f9',
+                    borderWidth: 4,
+                    tension: 0.4,
+                    fill: true,
+                    backgroundColor: (context) => {
+                        const gradient = context.chart.ctx.createLinearGradient(0, 0, 0, 200);
+                        gradient.addColorStop(0, 'rgba(255, 255, 255, 0.05)');
+                        gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+                        return gradient;
+                    },
+                    pointRadius: 6,
+                    pointBackgroundColor: '#fff',
+                    pointBorderColor: '#020617',
+                    pointBorderWidth: 3,
+                    pointHoverRadius: 9,
+                    pointHoverBackgroundColor: neonColor
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: commonScales
+            }
+        });
+    });
+</script>
+<!-- END: ChartScripts -->
+</body></html>

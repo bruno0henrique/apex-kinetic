@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-lowest": "#000000",
+              "surface-container-low": "#0f141a",
+              "secondary-container": "#006875",
+              "on-error": "#450900",
+              "primary-fixed": "#a3fe00",
+              "inverse-on-surface": "#51555d",
+              "on-tertiary-container": "#ffffff",
+              "tertiary-fixed-dim": "#849eff",
+              "surface-container": "#151a21",
+              "tertiary-container": "#1858f6",
+              "secondary-fixed": "#26e6ff",
+              "on-tertiary-fixed-variant": "#002e94",
+              "secondary": "#00e3fd",
+              "outline": "#72757d",
+              "background": "#0a0e14",
+              "surface": "#0a0e14",
+              "on-tertiary-fixed": "#001248",
+              "on-primary-fixed": "#2c4900",
+              "outline-variant": "#44484f",
+              "on-surface": "#f1f3fc",
+              "surface-bright": "#262c36",
+              "inverse-surface": "#f8f9ff",
+              "surface-variant": "#20262f",
+              "primary-container": "#a3fe00",
+              "error": "#ff7351",
+              "primary": "#ddffaf",
+              "primary-dim": "#99ee00",
+              "on-tertiary": "#00195b",
+              "on-background": "#f1f3fc",
+              "primary-fixed-dim": "#99ee00",
+              "on-primary-container": "#395d00",
+              "error-dim": "#d53d18",
+              "tertiary-dim": "#3367ff",
+              "on-secondary-fixed": "#003a42",
+              "on-secondary-container": "#e8fbff",
+              "on-surface-variant": "#a8abb3",
+              "surface-container-high": "#1b2028",
+              "error-container": "#b92902",
+              "on-error-container": "#ffd2c8",
+              "tertiary": "#7c98ff",
+              "on-secondary-fixed-variant": "#005964",
+              "secondary-fixed-dim": "#00d7f0",
+              "inverse-primary": "#426a00",
+              "surface-dim": "#0a0e14",
+              "on-primary-fixed-variant": "#406800",
+              "tertiary-fixed": "#98adff",
+              "secondary-dim": "#00d4ec",
+              "surface-tint": "#ddffaf",
+              "surface-container-highest": "#20262f",
+              "on-secondary": "#004d57",
+              "on-primary": "#3f6600"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(32, 38, 47, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(163, 254, 0, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-950/40 backdrop-blur-xl shadow-[0_4px_30px_rgba(164,255,0,0.05)]">
+<div class="flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<div class="relative w-12 h-12 rounded-full overflow-hidden border-2 border-primary-container neon-glow">
+<img class="w-full h-full object-cover" data-alt="Futuristic holographic AI avatar head with neon blue and green light circuits on a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMHeVhPGvwvW3ZCn7q_2Xkt44LsLCilrVn2oc17GvuaZ-2tkk_uV5-C0GR4JD3g7LSYT6-w__nKW6a3dcMe1ElwltLn3d_yVwpqjMoLmmDBxkX3bxuahHq4fnzrQIpCM7Xf0qhEEAX8hs1pBQUfp_6wsIrYj2JMWPtox6sGlWR5f5jCh-ig4MJr7bkjf9fiOQhRyAkbb_Zq0mkNEkdA6oTGhm2qh-rpokQRICKO3E3UizIjC5mcBaFvMc1m_r-nzp_6YerAuqhjps"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline uppercase tracking-widest font-bold text-lime-400 text-sm">AI COACH</span>
+<span class="text-xs text-on-surface-variant font-medium">Apex Kinetic Intelligence</span>
+</div>
+</div>
+<button class="active:scale-95 duration-200 hover:text-lime-200 transition-colors text-slate-400">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<div class="bg-gradient-to-r from-transparent via-lime-400/20 to-transparent h-px w-full"></div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-24 pb-32 px-6 flex flex-col gap-8 max-w-4xl mx-auto w-full">
+<!-- Welcome/Identity Section -->
+<section class="flex flex-col items-center justify-center text-center py-4 mb-4">
+<h1 class="font-headline text-5xl font-black text-on-background tracking-tighter mb-2">APEX COACH</h1>
+<p class="text-on-surface-variant text-sm max-w-[280px]">Otimizando sua performance através de dados neurais e biométricos.</p>
+</section>
+<!-- Chat Bubble: User -->
+<div class="flex justify-end w-full animate-in slide-in-from-right-4 duration-500">
+<div class="bg-surface-container-highest p-5 rounded-3xl rounded-tr-none max-w-[85%] border border-outline-variant/10">
+<p class="text-on-surface text-sm leading-relaxed">
+                    Como posso melhorar minha execução no agachamento?
+                </p>
+<span class="text-[10px] text-on-surface-variant mt-2 block opacity-60">14:02</span>
+</div>
+</div>
+<!-- Chat Bubble: AI Coach -->
+<div class="flex justify-start w-full gap-3 animate-in slide-in-from-left-4 duration-500">
+<div class="flex flex-col gap-4 max-w-[90%]">
+<div class="glass-card p-6 rounded-3xl rounded-tl-none border-l-4 border-primary-container shadow-2xl">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary-container text-lg" data-icon="monitoring">monitoring</span>
+<span class="font-headline text-xs font-bold text-primary tracking-widest uppercase">Análise Biométrica</span>
+</div>
+<p class="text-on-surface text-base leading-relaxed mb-4">
+                        Com base nos seus dados de ontem, notei uma leve inclinação anterior excessiva na fase excêntrica. 
+                        <span class="text-primary-container font-semibold">Sugiro focar na ativação do core e manter o peito elevado.</span>
+</p>
+<!-- Performance Data Card (Bento Style) -->
+<div class="grid grid-cols-2 gap-3 mt-4">
+<div class="bg-surface-container-low p-4 rounded-2xl border border-outline-variant/5">
+<span class="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider">Carga Sugerida</span>
+<div class="font-headline text-2xl text-primary mt-1">85kg</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-2xl border border-outline-variant/5">
+<span class="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider">Estabilidade</span>
+<div class="font-headline text-2xl text-secondary mt-1">94%</div>
+</div>
+</div>
+<button class="mt-4 w-full bg-primary-container text-on-primary-container py-3 rounded-full font-headline font-bold text-sm flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-base" data-icon="play_circle">play_circle</span>
+                        VER VÍDEO TÉCNICO
+                    </button>
+</div>
+<span class="text-[10px] text-on-surface-variant opacity-60 ml-2">14:03</span>
+</div>
+</div>
+<!-- AI Suggestion Quick Action -->
+<div class="mt-4 flex flex-col gap-3">
+<h3 class="font-headline text-xs font-bold text-on-surface-variant uppercase tracking-widest px-2">Ajustes Rápidos</h3>
+<div class="flex gap-3 overflow-x-auto pb-4 no-scrollbar">
+<button class="flex-shrink-0 bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant/20 px-6 py-4 rounded-2xl flex flex-col gap-2 transition-all">
+<span class="material-symbols-outlined text-primary" data-icon="fitness_center">fitness_center</span>
+<span class="text-xs font-bold">Reduzir volume</span>
+</button>
+<button class="flex-shrink-0 bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant/20 px-6 py-4 rounded-2xl flex flex-col gap-2 transition-all">
+<span class="material-symbols-outlined text-secondary" data-icon="timer">timer</span>
+<span class="text-xs font-bold">Descanso longo</span>
+</button>
+<button class="flex-shrink-0 bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant/20 px-6 py-4 rounded-2xl flex flex-col gap-2 transition-all">
+<span class="material-symbols-outlined text-tertiary" data-icon="auto_awesome">auto_awesome</span>
+<span class="text-xs font-bold">Nova Playlist</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Chat Input Area -->
+<div class="fixed bottom-24 left-0 w-full px-6 z-40">
+<div class="max-w-4xl mx-auto">
+<div class="glass-card rounded-full p-2 flex items-center gap-2 border border-outline-variant/20 shadow-2xl">
+<button class="w-12 h-12 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="mic">mic</span>
+</button>
+<input class="flex-grow bg-transparent border-none focus:ring-0 text-sm font-body placeholder:text-on-surface-variant/50" placeholder="Pergunte qualquer coisa ao Apex Coach..." type="text"/>
+<button class="w-12 h-12 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center neon-glow active:scale-90 duration-300">
+<span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-slate-950/60 backdrop-blur-2xl z-50 rounded-t-lg">
+<a class="flex flex-col items-center justify-center text-slate-500 opacity-60 hover:opacity-100 transition-opacity active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="fitness_center">fitness_center</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-tight">TRAIN</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-lime-400/20 text-lime-400 rounded-full px-6 py-2 shadow-[0_0_15px_rgba(164,255,0,0.3)] active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-tight">COACH</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 opacity-60 hover:opacity-100 transition-opacity active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-tight">STATS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 opacity-60 hover:opacity-100 transition-opacity active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-tight">PROFILE</span>
+</a>
+</nav>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

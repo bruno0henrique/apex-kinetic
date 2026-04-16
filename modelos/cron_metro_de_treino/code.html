@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TREINO ATIVO - Cronômetro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed": "#2c4900",
+              "on-tertiary-fixed-variant": "#002e94",
+              "inverse-on-surface": "#51555d",
+              "on-error": "#450900",
+              "error-container": "#b92902",
+              "error": "#ff7351",
+              "on-surface": "#f1f3fc",
+              "surface-container-low": "#0f141a",
+              "primary-container": "#a3fe00",
+              "primary-fixed-dim": "#99ee00",
+              "surface-dim": "#0a0e14",
+              "outline-variant": "#44484f",
+              "on-tertiary": "#00195b",
+              "tertiary-dim": "#3367ff",
+              "on-tertiary-fixed": "#001248",
+              "on-error-container": "#ffd2c8",
+              "surface-bright": "#262c36",
+              "secondary": "#00e3fd",
+              "tertiary-fixed-dim": "#849eff",
+              "primary-dim": "#99ee00",
+              "on-tertiary-container": "#ffffff",
+              "secondary-dim": "#00d4ec",
+              "on-secondary-fixed-variant": "#005964",
+              "inverse-primary": "#426a00",
+              "on-secondary-fixed": "#003a42",
+              "surface-variant": "#20262f",
+              "tertiary-container": "#1858f6",
+              "surface-tint": "#ddffaf",
+              "on-primary-container": "#395d00",
+              "outline": "#72757d",
+              "tertiary": "#7c98ff",
+              "tertiary-fixed": "#98adff",
+              "primary-fixed": "#a3fe00",
+              "on-primary-fixed-variant": "#406800",
+              "secondary-fixed-dim": "#00d7f0",
+              "surface-container-lowest": "#000000",
+              "background": "#0a0e14",
+              "secondary-fixed": "#26e6ff",
+              "primary": "#ddffaf",
+              "surface-container-highest": "#20262f",
+              "secondary-container": "#006875",
+              "surface-container": "#151a21",
+              "inverse-surface": "#f8f9ff",
+              "error-dim": "#d53d18",
+              "on-primary": "#3f6600",
+              "on-secondary-container": "#e8fbff",
+              "on-secondary": "#004d57",
+              "on-surface-variant": "#a8abb3",
+              "surface-container-high": "#1b2028",
+              "surface": "#0a0e14",
+              "on-background": "#f1f3fc"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ease-out-expo {
+            transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .glass-card {
+            background: rgba(32, 38, 47, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body min-h-screen selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0a0e14]/40 backdrop-blur-xl shadow-[0_4px_30px_rgba(164,255,0,0.05)] flex justify-between items-center px-6 h-20">
+<div class="flex items-center gap-4">
+<button class="text-[#ddffaf] active:scale-95 transition-transform duration-300">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline font-bold uppercase tracking-tighter text-[#ddffaf]">TREINO ATIVO</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#ddffaf] active:scale-95 transition-transform duration-300">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-md mx-auto min-h-screen flex flex-col items-center">
+<!-- Mode Selection -->
+<div class="w-full bg-surface-container-low p-1.5 rounded-full flex mb-10">
+<button class="flex-1 py-3 px-4 rounded-full text-sm font-bold tracking-wide uppercase transition-all duration-300 bg-primary-container text-on-primary-container shadow-lg shadow-primary-container/20">
+                Cronômetro Livre
+            </button>
+<button class="flex-1 py-3 px-4 rounded-full text-sm font-bold tracking-wide uppercase transition-all duration-300 text-on-surface-variant hover:text-on-surface">
+                Conectado ao Treino
+            </button>
+</div>
+<!-- Workout Context (Connected Mode Active) -->
+<div class="w-full glass-card rounded-lg p-6 mb-8 border border-white/5 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/5 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-primary-container/10 transition-colors"></div>
+<div class="flex items-start justify-between relative z-10">
+<div>
+<span class="text-secondary text-[10px] font-extrabold uppercase tracking-[0.2em] mb-1 block">Exercício Atual</span>
+<h2 class="font-headline text-2xl font-bold text-on-surface">Supino Inclinado</h2>
+<p class="text-on-surface-variant text-sm mt-1">Série 3 de 4 • 10-12 Reps</p>
+</div>
+<div class="bg-surface-container-highest p-3 rounded-2xl">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+</div>
+</div>
+<div class="mt-6 flex items-center justify-between border-t border-outline-variant/20 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-lg">schedule</span>
+<span class="text-sm font-medium text-on-surface-variant">Descanso: <span class="text-on-surface">90s</span></span>
+</div>
+<div class="text-xs font-bold text-primary-container uppercase tracking-widest">Próximo: Voador</div>
+</div>
+</div>
+<!-- Timer Display -->
+<div class="relative w-72 h-72 mb-12 flex items-center justify-center">
+<!-- Neon Glow Ring -->
+<div class="absolute inset-0 rounded-full border-4 border-surface-container-highest shadow-[0_0_50px_rgba(163,254,0,0.1)]"></div>
+<!-- Progress Ring (SVG) -->
+<svg class="absolute inset-0 w-full h-full -rotate-90 transform" viewbox="0 0 100 100">
+<circle class="text-primary-container" cx="50" cy="50" fill="transparent" r="46" stroke="currentColor" stroke-dasharray="289" stroke-dashoffset="86" stroke-linecap="round" stroke-width="4"></circle>
+</svg>
+<!-- Inner Timer Text -->
+<div class="text-center z-10">
+<div class="font-headline text-8xl font-black text-on-surface tracking-tighter tabular-nums drop-shadow-[0_0_20px_rgba(163,254,0,0.2)]">
+                    01:04
+                </div>
+<div class="text-primary-container font-headline text-lg font-bold tracking-[0.3em] -mt-2 uppercase opacity-80">
+                    Restante
+                </div>
+</div>
+</div>
+<!-- Control Buttons -->
+<div class="w-full grid grid-cols-2 gap-4">
+<button class="col-span-2 bg-primary-container text-on-primary-container py-6 rounded-full font-headline font-black text-xl tracking-widest active:scale-95 transition-all ease-out-expo shadow-[0_10px_40px_rgba(163,254,0,0.2)] flex items-center justify-center gap-3">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">pause</span>
+                PAUSAR
+            </button>
+<button class="bg-surface-container-highest text-on-surface py-5 rounded-full font-headline font-bold text-sm tracking-widest active:scale-95 transition-all ease-out-expo border border-outline-variant/20">
+                REINICIAR
+            </button>
+<button class="bg-surface-container-highest text-secondary py-5 rounded-full font-headline font-bold text-sm tracking-widest active:scale-95 transition-all ease-out-expo border border-outline-variant/20 flex items-center justify-center gap-2">
+                PULAR SÉRIE
+                <span class="material-symbols-outlined text-lg">fast_forward</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full rounded-t-[2rem] z-50 bg-[#0a0e14]/80 backdrop-blur-2xl border-t border-[#ddffaf]/10 shadow-[0_-10px_40px_rgba(0,0,0,0.5)] flex justify-around items-center h-24 px-8 pb-4">
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-[#ddffaf] transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-manrope text-[10px] font-bold uppercase tracking-widest mt-1">Início</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-[#ddffaf] transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined">fitness_center</span>
+<span class="font-manrope text-[10px] font-bold uppercase tracking-widest mt-1">Treinos</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#a3fe00] relative after:content-[''] after:absolute after:-bottom-1 after:w-1 after:h-1 after:bg-[#a3fe00] after:rounded-full active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">timer</span>
+<span class="font-manrope text-[10px] font-bold uppercase tracking-widest mt-1">Timer</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-[#ddffaf] transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-manrope text-[10px] font-bold uppercase tracking-widest mt-1">Perfil</span>
+</a>
+</nav>
+<!-- Decorative Elements -->
+<div class="fixed top-1/4 -left-20 w-64 h-64 bg-primary-container/5 blur-[120px] rounded-full pointer-events-none"></div>
+<div class="fixed bottom-1/4 -right-20 w-64 h-64 bg-secondary/5 blur-[120px] rounded-full pointer-events-none"></div>
+</body></html>
