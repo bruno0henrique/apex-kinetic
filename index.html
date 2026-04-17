@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Apex Kinetic</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ddffaf",
+                        "secondary": "#00e3fd",
+                        "background": "#0a0e14",
+                        "surface": "#0a0e14",
+                        "on-background": "#f1f3fc",
+                        "on-surface": "#f1f3fc",
+                        "primary-container": "#a3fe00",
+                        "surface-container": "#151a21"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"}
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            min-height: 100vh;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 20px rgba(163, 254, 0, 0.3);
+        }
+    </style>
+    <!-- Vercel Speed Insights -->
+    <script>
+        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body class="bg-background text-on-background font-body">
+    <div class="min-h-screen flex flex-col items-center justify-center p-6">
+        <div class="max-w-4xl w-full">
+            <h1 class="text-5xl font-headline font-bold text-primary mb-4 text-center">
+                Apex Kinetic
+            </h1>
+            <p class="text-xl text-on-surface/80 mb-12 text-center">
+                Fitness Tracking Application
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="modelos/tela_de_login/code.html" class="card bg-surface-container p-6 rounded-lg border border-primary/20">
+                    <h2 class="text-xl font-headline font-semibold text-primary mb-2">Login</h2>
+                    <p class="text-sm text-on-surface/70">Tela de Login</p>
+                </a>
+                
+                <a href="modelos/tela_de_carregamento_splash/code.html" class="card bg-surface-container p-6 rounded-lg border border-primary/20">
+                    <h2 class="text-xl font-headline font-semibold text-primary mb-2">Splash</h2>
+                    <p class="text-sm text-on-surface/70">Tela de Carregamento</p>
+                </a>
+                
+                <a href="modelos/tela_inicial_amig_vel/code.html" class="card bg-surface-container p-6 rounded-lg border border-primary/20">
+                    <h2 class="text-xl font-headline font-semibold text-primary mb-2">Dashboard</h2>
+                    <p class="text-sm text-on-surface/70">Tela Inicial</p>
+                </a>
+                
+                <a href="modelos/perfil_do_atleta_refinado/code.html" class="card bg-surface-container p-6 rounded-lg border border-primary/20">
+                    <h2 class="text-xl font-headline font-semibold text-primary mb-2">Perfil</h2>
+                    <p class="text-sm text-on-surface/70">Perfil do Atleta</p>
+                </a>
+                
+                <a href="modelos/plano_de_treino_do_dia/code.html" class="card bg-surface-container p-6 rounded-lg border border-primary/20">
+                    <h2 class="text-xl font-headline font-semibold text-primary mb-2">Treino</h2>
+                    <p class="text-sm text-on-surface/70">Plano de Treino do Dia</p>
+                </a>
+                
+                <a href="modelos/cron_metro_de_treino/code.html" class="card bg-surface-container p-6 rounded-lg border border-primary/20">
+                    <h2 class="text-xl font-headline font-semibold text-primary mb-2">Cronômetro</h2>
+                    <p class="text-sm text-on-surface/70">Cronômetro de Treino</p>
+                </a>
+                
+                <a href="modelos/resumo_p_s_treino/code.html" class="card bg-surface-container p-6 rounded-lg border border-primary/20">
+                    <h2 class="text-xl font-headline font-semibold text-primary mb-2">Resumo</h2>
+                    <p class="text-sm text-on-surface/70">Resumo Pós-Treino</p>
+                </a>
+                
+                <a href="modelos/parab_ns_pelo_treino/code.html" class="card bg-surface-container p-6 rounded-lg border border-primary/20">
+                    <h2 class="text-xl font-headline font-semibold text-primary mb-2">Parabéns</h2>
+                    <p class="text-sm text-on-surface/70">Parabéns pelo Treino</p>
+                </a>
+                
+                <a href="modelos/estat_sticas_refinado/code.html" class="card bg-surface-container p-6 rounded-lg border border-primary/20">
+                    <h2 class="text-xl font-headline font-semibold text-primary mb-2">Estatísticas</h2>
+                    <p class="text-sm text-on-surface/70">Estatísticas Refinado</p>
+                </a>
+                
+                <a href="modelos/apex_coach_ia/code.html" class="card bg-surface-container p-6 rounded-lg border border-primary/20">
+                    <h2 class="text-xl font-headline font-semibold text-primary mb-2">Coach IA</h2>
+                    <p class="text-sm text-on-surface/70">Apex Coach IA</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

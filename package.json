@@ -1,0 +1,25 @@
+{
+  "name": "apex-kinetic",
+  "version": "1.0.0",
+  "description": "Apex Kinetic - Fitness tracking application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx http-server . -p 3000",
+    "build": "echo \"Static site - no build required\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bruno0henrique/apex-kinetic.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bruno0henrique/apex-kinetic/issues"
+  },
+  "homepage": "https://github.com/bruno0henrique/apex-kinetic#readme",
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  }
+}
